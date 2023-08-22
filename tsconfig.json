@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "paths": {
+      "@assets/*": ["./src/assets/*"],
+      "@components/*": ["./src/common/components/*"],
+      "@hooks/*": ["./src/common/hooks/*"],
+      "@utils/*": ["./src/common/utils/*"],
+      "@contexts/*": ["./src/common/contexts/*"],
+      "@common_types/*": ["./src/data/types/*"],
+      "@constants/*": ["./src/data/constants/*"],
+      "@enums/*": ["./src/data/enums/*"],
+      "@mocks/*": ["./src/data/mocks/*"],
+      "@models/*": ["./src/data/models/*"],
+      "@features/*": ["./src/features/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@layout/*": ["./src/layout/*"],
+      "@store/*": ["./src/store/*"],
+      "@graphql/*": ["./src/graphql/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
