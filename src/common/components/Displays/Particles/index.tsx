@@ -98,7 +98,7 @@ const ParticlesComponent: React.FC = () => {
       init={particlesInit}
       options={particleParams}
       style={{
-        position: "absolute",
+        position: "fixed",
         top: 0,
         left: 0,
         width: "100%",

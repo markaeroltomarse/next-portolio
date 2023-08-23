@@ -28,7 +28,7 @@ const AppLayout: React.FC<AppLayoutProps> = (props) => {
   }, [isDark]);
 
   return (
-    <div className={`${theme} min-h-[100vh] transition-all`}>
+    <div className={`${theme} min-h-[100vh] transition-all w-[100vw]`}>
       {isLoaded ? (
         <>
           <Navbar />

@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 type UseTypingEffectOptions = {
   duration: number; // in milliseconds
+  isStop?: boolean;
 };
 
 const useTypingEffect = (
@@ -9,16 +10,19 @@ const useTypingEffect = (
   options: UseTypingEffectOptions
 ): string => {
   const [typedText, setTypedText] = useState(text);
-  const { duration } = options;
+  const { duration, isStop } = options;
+  const [typingTimer, setTypingTimer] = useState<
+    number | null | NodeJS.Timeout
+  >(null);
 
-  useEffect(() => {
+  const startTimer = useCallback(() => {
     const len = text.length;
     let isReversed = true;
     let currentIndex = len;
-    let typingTimer: string | number | NodeJS.Timeout | null | undefined = null;
+
     let currentTyped = text;
     if (!typingTimer) {
-      typingTimer = setInterval(() => {
+      const id = setInterval(() => {
         if (isReversed) {
           currentIndex -= 1;
           if (currentIndex === 0) {
@@ -34,12 +38,26 @@ const useTypingEffect = (
         currentTyped = text.slice(0, currentIndex);
         setTypedText(currentTyped);
       }, duration);
-    }
 
+      setTypingTimer(id);
+    }
+  }, [text, duration]);
+
+  useEffect(() => {
     return () => {
       if (typingTimer) clearInterval(typingTimer);
     };
-  }, [text, duration]);
+  }, [typingTimer]);
+
+  useEffect(() => {
+    if (isStop && typingTimer) {
+      clearInterval(typingTimer);
+    }
+
+    if (!isStop) {
+      startTimer();
+    }
+  }, [isStop]);
 
   return typedText;
 };

@@ -1,11 +1,12 @@
 export interface DefaultViewProps {
   children?: React.ReactNode;
+  className?: string;
 }
 
 const DefaultView: React.FC<DefaultViewProps> = (props) => {
-  const { children } = props;
+  const { children, className } = props;
 
-  return <div className={`container mx-auto`}>{children}</div>;
+  return <div className={className}>{children}</div>;
 };
 
 export default DefaultView;
