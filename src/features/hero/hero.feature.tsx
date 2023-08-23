@@ -12,7 +12,7 @@ const HeroFeature: React.FC<HeroFeatureProps> = (props) => {
   const { className } = props;
   const router = useRouter();
   const typedText = useTypingEffect("MARK AEROL TOMARSE", {
-    duration: 100,
+    duration: 300,
     isStop: router.query?.sview !== "0",
   });
 
@@ -33,13 +33,19 @@ const HeroFeature: React.FC<HeroFeatureProps> = (props) => {
           }`}
         >
           <div className="flex flex-col gap-5">
-            <h1 className="font-bold text-6xl ">{typedText}</h1>
+            <h1 className={`${sm || xs ? "text-4xl" : "text-6xl "} font-bold `}>
+              {typedText}
+            </h1>
             <p className={`${color}`}>
               {`Hello, I'm passionate web developer based in the Philippines.`}
             </p>
 
             <div>
-              <code className="bg-[#34495e] text-slate-50 text-2xl px-5 py-2 rounded-sm transition-all">
+              <code
+                className={`bg-[#34495e] text-slate-50 ${
+                  (sm || xs) && "text-[18px]"
+                } text-2xl px-5 py-2 rounded-sm transition-all`}
+              >
                 {"< Fullstack Developer />"}
               </code>
             </div>

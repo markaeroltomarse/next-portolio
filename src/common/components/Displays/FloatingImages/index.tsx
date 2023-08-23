@@ -124,11 +124,11 @@ const FloatingImages: React.FC<IFloatingDivs> = (props) => {
 
   if (sm || xs) {
     return (
-      <div className="grid gap-10 grid-cols-3 p-[2em]">
+      <div className="grid gap-5 grid-cols-3 p-[1.2em] ">
         {data.map((particle) => (
           <div
             key={particle.name}
-            className={` ${theme} rounded-md min-w-[100px] min-h-[100px] flex flex-col scale-100 cursor-pointer items-center justify-center p-3 aspect-square `}
+            className={`${theme} relative rounded-md min-w-[100px] min-h-[100px] flex flex-col scale-100 cursor-pointer items-center justify-center p-3 aspect-square `}
           >
             {particle.icon}
             <b className="font-mono">{particle.name}</b>
