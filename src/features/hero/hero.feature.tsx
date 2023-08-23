@@ -24,7 +24,7 @@ const HeroFeature: React.FC<HeroFeatureProps> = (props) => {
   return (
     <>
       <div
-        className={`${className} h-[80vh] flex items-center `}
+        className={`${className} h-[70vh] flex items-center `}
         data-aos="fade-up"
       >
         <div

@@ -31,7 +31,7 @@ const FloatingMenu: React.FC<FloatingMenuProps> = (props) => {
         return "#05c46b";
       }
 
-      return "#d2dae2";
+      return "";
     },
     [router.query]
   );

@@ -29,7 +29,6 @@ const AboutMe: React.FC<AboutMeProps> = (props) => {
         About Me <CgProfile size={30} />
       </h2>
       <br />
-      <br />
       <div
         className={`flex gap-10 ${(xs || sm) && "flex-col"}`}
         data-aos="fade-up"

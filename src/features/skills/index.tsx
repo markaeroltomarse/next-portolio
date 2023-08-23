@@ -24,8 +24,7 @@ const SkillsFeature: React.FC<SkillsFeatureProps> = (props) => {
   const router = useRouter();
   return (
     <div className={`${className} `}>
-      {" "}
-      <h2 className="text-2xl font-bold flex gap-3 items-center container mx-auto">
+      <h2 className="text-2xl font-bold flex gap-3 items-center container mx-auto ">
         My Skills <HiCode size={30} />
       </h2>
       {router.query?.sview === "2" && (

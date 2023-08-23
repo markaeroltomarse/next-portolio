@@ -13,16 +13,18 @@ const HomePageIndex: NextPageWithLayout<HomePageIndexProps> = () => {
 
   return (
     <>
-      <SwipeableViews
-        axis="x"
-        index={Number(router.query?.sview) || 0}
-        onChangeIndex={(e) => router.push("?sview=" + e)}
-      >
-        <HeroFeature className="container mx-auto" data-aos="fade-up" />
-        <AboutMe className="container mx-auto" data-aos="fade-up" />
-        <SkillsFeature className="" />
-      </SwipeableViews>
-      <FloatingMenu />
+      <div className="z-[10]">
+        <SwipeableViews
+          axis="x"
+          index={Number(router.query?.sview) || 0}
+          onChangeIndex={(e) => router.push("?sview=" + e)}
+        >
+          <HeroFeature className="container mx-auto" data-aos="fade-up" />
+          <AboutMe className="container mx-auto" data-aos="fade-up" />
+          <SkillsFeature className="" />
+        </SwipeableViews>
+        <FloatingMenu />
+      </div>
     </>
   );
 };
