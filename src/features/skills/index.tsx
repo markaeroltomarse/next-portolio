@@ -46,7 +46,7 @@ const SkillsFeature: React.FC<SkillsFeatureProps> = (props) => {
             { icon: <SiAmazonec2 size={100} color="#ffa502" />, name: "EC2" },
             { icon: <SiDocker size={100} color="#5352ed" />, name: "Docker" },
             { icon: <SiGit size={100} color="#ff6348" />, name: "GIT" },
-            { icon: <SiMongodb size={100} color="#2ed573" />, name: "GIT" },
+            { icon: <SiMongodb size={100} color="#2ed573" />, name: "MongoDB" },
           ]}
         />
       )}

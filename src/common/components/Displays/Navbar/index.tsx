@@ -5,7 +5,8 @@ import useBreakpoints from "@hooks/breakpoints.hook";
 import useThemeStyle from "@hooks/theme-style.hook";
 import { setIsDarkMode } from "@store/slices/componentes.slice";
 import { useMemo } from "react";
-import { BsCodeSlash, BsFillSunFill } from "react-icons/bs";
+import { BsFillSunFill } from "react-icons/bs";
+import { HiCode } from "react-icons/hi";
 import { ImProfile } from "react-icons/im";
 import { MdDarkMode } from "react-icons/md";
 
@@ -16,6 +17,7 @@ const Navbar: React.FC<NavbarProps> = (props) => {
   const isDark = useAppSelector((store) => store.components.isDarkMode);
 
   const { sm, xs } = useBreakpoints();
+  const isMobile = sm === true || xs === true;
 
   const themeButton = useMemo(() => {
     if (isDark) {
@@ -49,14 +51,14 @@ const Navbar: React.FC<NavbarProps> = (props) => {
   return (
     <nav
       className={`z-[100] fixed top-0 ${theme} left-1/2 transform -translate-x-1/2 flex justify-between container mx-auto ${
-        (sm || xs) && "py-5"
+        isMobile && "py-5"
       } py-10 items-center `}
     >
       <h2 className="text-3xl flex gap-2 items-center">
-        <BsCodeSlash className="text-green-600" size={40} />
+        <HiCode className="text-green-600" size={40} />
         <b>MTOMARSE</b>
       </h2>
-      {!sm && !xs ? (
+      {!isMobile ? (
         <div className="flex gap-5">
           {themeButton}
           <Button
