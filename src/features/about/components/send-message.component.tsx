@@ -22,11 +22,12 @@ const FloatingSendMessage: React.FC<FloatingSendMessageProps> = (props) => {
   };
 
   const { xs, sm } = useBreakpoints();
+  const isMobile = xs === true || sm === true
 
   return (
     <form
       className={`${theme} ${
-        (xs || sm) && "w-[99%]"
+        (isMobile) && "w-[99%]"
       } fixed left-1/2 transform -translate-x-1/2 bottom-32 p-3 flex rounded-md`}
       onSubmit={handleSubmit}
     >
