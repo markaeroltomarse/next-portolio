@@ -21,6 +21,8 @@ const FloatingImages: React.FC<IFloatingDivs> = (props) => {
     "text-slate-50 bg-slate-700"
   );
 
+  const border = validateTheme(" border-slate-200", "border-slate-500 ");
+
   const { xs, sm } = useBreakpoints();
 
   const [particles, setParticles] = useState<Particle[]>([]);
@@ -128,7 +130,7 @@ const FloatingImages: React.FC<IFloatingDivs> = (props) => {
         {data.map((particle) => (
           <div
             key={particle.name}
-            className={`${theme} relative rounded-md min-w-[100px] min-h-[100px] flex flex-col scale-100 cursor-pointer items-center justify-center p-3 aspect-square `}
+            className={`${theme} ${border} border-t-2 border-r-2 relative rounded-md min-w-[100px] min-h-[100px] flex flex-col scale-100 cursor-pointer items-center justify-center p-3 aspect-square `}
           >
             {particle.icon}
             <b className="font-mono">{particle.name}</b>
@@ -148,7 +150,7 @@ const FloatingImages: React.FC<IFloatingDivs> = (props) => {
         <div
           onMouseDown={() => handleMouseDown(particle.id)}
           key={particle.id}
-          className={`particle ${theme} rounded-md min-w-[100px] min-h-[100px] flex flex-col scale-100 cursor-pointer items-center justify-center p-3 aspect-square `}
+          className={`particle ${theme} ${border} border-t-2 border-r-2 rounded-md min-w-[100px] min-h-[100px] flex flex-col scale-100 cursor-pointer items-center justify-center p-3 aspect-square `}
           style={{
             top: particle.y + "px",
             left: particle.x + "px",

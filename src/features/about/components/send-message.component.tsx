@@ -16,19 +16,20 @@ const FloatingSendMessage: React.FC<FloatingSendMessageProps> = (props) => {
     "text-slate-700 bg-slate-300",
     "text-slate-50 bg-slate-700"
   );
+  const border = validateTheme(" border-slate-200", "border-slate-500 ");
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
   };
 
   const { xs, sm } = useBreakpoints();
-  const isMobile = xs === true || sm === true
+  const isMobile = xs === true || sm === true;
 
   return (
     <form
       className={`${theme} ${
-        (isMobile) && "w-[99%]"
-      } fixed left-1/2 transform -translate-x-1/2 bottom-32 p-3 flex rounded-md`}
+        isMobile && "w-[99%]"
+      }  ${border} border-t-2 border-r-2 fixed left-1/2 transform -translate-x-1/2 bottom-32 p-3 flex rounded-md`}
       onSubmit={handleSubmit}
     >
       <Input

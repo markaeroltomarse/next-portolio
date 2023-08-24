@@ -9,6 +9,7 @@ const ConvertsationComponent: React.FC<ConvertsationComponentProps> = () => {
     "text-slate-700 bg-slate-300",
     "text-slate-50 bg-slate-700"
   );
+  const border = validateTheme(" border-slate-200", "border-slate-500 ");
 
   const { xs, sm } = useBreakpoints();
   const isMobile = xs === true || sm === true;
@@ -19,7 +20,9 @@ const ConvertsationComponent: React.FC<ConvertsationComponentProps> = () => {
       data-aos="fade-up"
     >
       <div
-        className={`${theme} p-5 rounded-md ${isMobile ? "w-10/12" : "w-1/4"}`}
+        className={`${theme} ${border} border-t-2 border-r-2 p-5 rounded-md ${
+          isMobile ? "w-10/12" : "w-1/4"
+        }`}
       >
         Hello <br />
         <br /> {`I'm Mark Aerol Tomarse. You can ask anything about me 🙂`}
@@ -27,7 +30,7 @@ const ConvertsationComponent: React.FC<ConvertsationComponentProps> = () => {
 
       <div className="flex justify-end" data-aos="fade-up">
         <div
-          className={`${theme} p-5 rounded-md ${
+          className={`${theme} ${border} border-t-2 border-r-2 p-5 rounded-md ${
             isMobile ? "w-10/12" : "w-1/4"
           }`}
         >
@@ -36,7 +39,9 @@ const ConvertsationComponent: React.FC<ConvertsationComponentProps> = () => {
       </div>
 
       <div
-        className={`${theme} p-5 rounded-md ${isMobile ? "w-10/12" : "w-1/4"}`}
+        className={`${theme} ${border} border-t-2 border-r-2 p-5 rounded-md ${
+          isMobile ? "w-10/12" : "w-1/4"
+        }`}
         data-aos="fade-up"
       >
         Great! <br />
@@ -45,9 +50,9 @@ const ConvertsationComponent: React.FC<ConvertsationComponentProps> = () => {
 I have been working as a Full Stack developer at Xurpas Inc. for 1 year. However, in the year before I was employed there, I had already been developing web applications for small business clients and personal use.`}
       </div>
 
-      <div className="flex justify-end" data-aos="fade-up">
+      <div className="flex justify-end " data-aos="fade-up">
         <div
-          className={`${theme} p-5 rounded-md ${
+          className={`${theme} ${border} border-t-2 border-r-2 p-5 rounded-md ${
             isMobile ? "w-10/12" : "w-1/4"
           }`}
         >
@@ -56,7 +61,9 @@ I have been working as a Full Stack developer at Xurpas Inc. for 1 year. However
       </div>
 
       <div
-        className={`${theme} p-5 rounded-md ${isMobile ? "w-10/12" : "w-1/4"}`}
+        className={`${theme} ${border} border-t-2 border-r-2 p-5 rounded-md ${
+          isMobile ? "w-10/12" : "w-1/4"
+        }`}
         data-aos="fade-up"
       >
         Yes! <br />
@@ -64,9 +71,9 @@ I have been working as a Full Stack developer at Xurpas Inc. for 1 year. However
         memory while studying to code.
       </div>
 
-      <div className="flex justify-end " data-aos="fade-up">
+      <div className="flex justify-end  " data-aos="fade-up">
         <div
-          className={`${theme} p-5 rounded-md ${
+          className={`${theme} ${border} border-t-2 border-r-2 p-5 rounded-md ${
             isMobile ? "w-10/12" : "w-1/4"
           }`}
         >
@@ -75,7 +82,9 @@ I have been working as a Full Stack developer at Xurpas Inc. for 1 year. However
       </div>
 
       <div
-        className={`${theme} p-5 rounded-md ${isMobile ? "w-10/12" : "w-1/4"}`}
+        className={`${theme} ${border} border-t-2 border-r-2 p-5 rounded-md ${
+          isMobile ? "w-10/12" : "w-1/4"
+        }`}
         data-aos="fade-up"
       >
         Interesting! <br />
