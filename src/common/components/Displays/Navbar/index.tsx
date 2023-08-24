@@ -49,30 +49,32 @@ const Navbar: React.FC<NavbarProps> = (props) => {
   const theme = validateTheme(`bg-slate-50`, `bg-slate-900`);
 
   return (
-    <nav
-      className={`z-[100] fixed top-0 ${theme} left-1/2 transform -translate-x-1/2 flex justify-between container mx-auto ${
-        isMobile && "py-5"
-      } py-10 items-center `}
-    >
-      <h2 className="text-3xl flex gap-2 items-center">
-        <HiCode className="text-green-600" size={40} />
-        <b>MTOMARSE</b>
-      </h2>
-      {!isMobile ? (
-        <div className="flex gap-5">
-          {themeButton}
-          <Button
-            className="bg-blue-500 rounded flex gap-3 text-blue-50 shadow-sm"
-            noBorder
-          >
-            <ImProfile className="text-blue-100" size={20} />
-            <h5>DOWNLOAD MY CV</h5>
-          </Button>
-        </div>
-      ) : (
-        themeButton
-      )}
-    </nav>
+    <div className={` ${theme} w-full z-[100] fixed top-0 `}>
+      <nav
+        className={`   flex justify-between container mx-auto ${
+          isMobile && "py-5"
+        } py-10 items-center `}
+      >
+        <h2 className="text-3xl flex gap-2 items-center">
+          <HiCode className="text-green-600" size={40} />
+          <b>MTOMARSE</b>
+        </h2>
+        {!isMobile ? (
+          <div className="flex gap-5">
+            {themeButton}
+            <Button
+              className="bg-blue-500 rounded flex gap-3 text-blue-50 shadow-sm"
+              noBorder
+            >
+              <ImProfile className="text-blue-100" size={20} />
+              <h5>DOWNLOAD MY CV</h5>
+            </Button>
+          </div>
+        ) : (
+          themeButton
+        )}
+      </nav>
+    </div>
   );
 };
 
