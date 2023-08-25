@@ -4,6 +4,9 @@ import useThemeStyle from "@hooks/theme-style.hook";
 import useTypingEffect from "@hooks/type-animation.hook";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { AiFillGithub, AiFillYoutube } from "react-icons/ai";
+import { BsDiscord } from "react-icons/bs";
+import SocialsComponent from "./components/socials.component";
 export interface HeroFeatureProps {
   className?: string;
 }
@@ -20,6 +23,7 @@ const HeroFeature: React.FC<HeroFeatureProps> = (props) => {
 
   const { validateTheme } = useThemeStyle();
   const color = validateTheme("text-slate-700", "text-slate-50");
+  const shadow = validateTheme("shadow-slate-400", "shadow-slate-700");
 
   const { sm, xs, md } = useBreakpoints();
   const isMobile = sm === true || xs === true;
@@ -57,6 +61,23 @@ const HeroFeature: React.FC<HeroFeatureProps> = (props) => {
                 {"< Fullstack Developer />"}
               </code>
             </div>
+
+            <SocialsComponent
+              items={[
+                {
+                  link: "https://github.com/markaeroltomarse",
+                  icon: <AiFillGithub size={25} className="cursor-pointer" />,
+                },
+                {
+                  link: "https://discordapp.com/users/758345244537913410",
+                  icon: <BsDiscord size={25} />,
+                },
+                {
+                  link: "https://www.youtube.com/channel/UCObdMPZ96BpyuBp-Oz8GSNg",
+                  icon: <AiFillYoutube size={25} />,
+                },
+              ]}
+            />
           </div>
           {isMobile && <div className={`h-[200px] `}></div>}
           <Image
@@ -66,7 +87,7 @@ const HeroFeature: React.FC<HeroFeatureProps> = (props) => {
             alt=""
             className={`particle rounded-full border-8 ${
               isMobile ? "top-10" : "right-0"
-            }`}
+            } ${shadow} shadow-2xl`}
           />
         </div>
       </div>

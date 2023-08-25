@@ -45,17 +45,17 @@ const ParticlesComponent: React.FC = () => {
       },
     },
     fullScreen: {
-      enable: false,
-      zIndex: 0,
+      enable: true,
+      zIndex: 200,
     },
     particles: {
       color: {
-        value: isDark ? "#ffffff" : "#7f8c8d",
+        value: isDark ? "#95afc0" : "#95afc0",
       },
       links: {
-        color: "#ffffff",
+        color: isDark ? "#ffffff" : "#7f8c8d",
         distance: 150,
-        enable: false,
+        enable: true,
         opacity: 0.5,
         width: 1,
       },
@@ -81,11 +81,11 @@ const ParticlesComponent: React.FC = () => {
         value: 0.9,
       },
       shape: {
-        type: "edge",
+        type: "circle",
       },
       size: {
         random: true,
-        value: 3,
+        value: 5,
       },
     },
     detectRetina: true,

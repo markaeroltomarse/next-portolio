@@ -13,7 +13,7 @@ import React, { useState } from "react";
 import SwipeableViews from "react-swipeable-views";
 import PaginationDots from "./carousel-dots.component";
 
-interface Album {
+interface IProject {
   name: string;
   src: StaticImageData;
   description: string;
@@ -26,7 +26,7 @@ const styles = {
   },
 };
 
-const albums: Album[] = [
+const projects: IProject[] = [
   {
     name: "Playfriends - Play with content creators.",
     src: Playfriends,
@@ -96,7 +96,7 @@ const DemoCoverflow: React.FC = () => {
         style={styles.root}
         onChangeIndex={handleChangeIndex}
       >
-        {albums.map((album, currentIndex) => {
+        {projects.map((album, currentIndex) => {
           const transformValue =
             currentIndex === activeIndex
               ? "translateX(0) scale(1)"
@@ -136,7 +136,7 @@ const DemoCoverflow: React.FC = () => {
       </SwipeableViews>
       <br />
       <PaginationDots
-        numDots={5}
+        numDots={projects.length}
         activeIndex={activeIndex}
         onClick={handleDotClick}
       />

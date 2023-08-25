@@ -58,7 +58,7 @@ const FloatingMenu: React.FC<FloatingMenuProps> = (props) => {
     <div
       className={`${theme} border-t-2  fixed left-1/2 transform -translate-x-1/2 bottom-0 p-3 rounded-ss-md rounded-se-md flex ${
         (xs || sm) && "w-full justify-center"
-      } grid grid-cols-5 gap-5`}
+      } grid grid-cols-5 gap-5 px-5`}
     >
       <div
         onClick={() => handleClick("?sview=0")}

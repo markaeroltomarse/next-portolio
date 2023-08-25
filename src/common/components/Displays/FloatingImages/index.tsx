@@ -21,7 +21,7 @@ const FloatingImages: React.FC<IFloatingDivs> = (props) => {
     "text-slate-50 bg-slate-700"
   );
 
-  const border = validateTheme(" border-slate-200", "border-slate-500 ");
+  const border = validateTheme("border-slate-200", "border-slate-500 ");
 
   const { xs, sm } = useBreakpoints();
 
