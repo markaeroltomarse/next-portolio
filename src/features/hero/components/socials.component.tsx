@@ -13,13 +13,13 @@ export interface SocialsComponentProps {
 const SocialsComponent: React.FC<SocialsComponentProps> = (props) => {
   const { items } = props;
 
-  const { sm, xs, md } = useBreakpoints();
+  const { sm, xs } = useBreakpoints();
   const isMobile = sm === true || xs === true;
 
   return (
     <div className={`flex gap-5 items-center ${isMobile && "justify-center"}`}>
       {items.map((social: ISocial) => (
-        <Link target="_blank" href="https://github.com/markaeroltomarse">
+        <Link key={social.link} target="_blank" href={social.link}>
           {social.icon}
         </Link>
       ))}
