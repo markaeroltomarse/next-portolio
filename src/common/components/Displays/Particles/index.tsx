@@ -24,7 +24,7 @@ const ParticlesComponent: React.FC = () => {
         },
         onHover: {
           enable: true,
-          mode: "attract",
+          mode: "repulse",
         },
         resize: true,
       },

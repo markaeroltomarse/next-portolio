@@ -1,4 +1,4 @@
-import Botika from "@assets/botika.png";
+import Botika from "@assets/botikav2.png";
 import MemaChat from "@assets/memachat.png";
 import MetaCare from "@assets/metacare.png";
 import NuxtIG from "@assets/nuxtig.png";
@@ -9,6 +9,7 @@ import TraQR from "@assets/traqr.png";
 import useBreakpoints from "@hooks/breakpoints.hook";
 import useThemeStyle from "@hooks/theme-style.hook";
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 import SwipeableViews from "react-swipeable-views";
 import PaginationDots from "./carousel-dots.component";
@@ -18,6 +19,7 @@ interface IProject {
   src: StaticImageData;
   description: string;
   icons: React.ReactNode[];
+  link: string;
 }
 
 const styles = {
@@ -32,30 +34,35 @@ const projects: IProject[] = [
     src: Playfriends,
     description: "Play with content creators",
     icons: [],
+    link: "",
   },
   {
     name: "Mema Chat App CMS",
     src: MemaChat,
     description: "Web based for admin of mema chat mobile app",
     icons: [],
+    link: "",
   },
   {
     name: "MetaCare",
     src: MetaCare,
     description: "E-Commerce appp",
     icons: [],
+    link: "",
   },
   {
     name: "Online School Management",
     src: Ones,
     description: "Thesis Project - Online School Management Webbase. 😎",
     icons: [],
+    link: "",
   },
   {
     name: "NuxtIG - Basic Instagram clone app🤩",
     src: NuxtIG,
     description: "Personal project",
     icons: [],
+    link: "",
   },
   {
     name: "Violation Ticketing System",
@@ -63,12 +70,14 @@ const projects: IProject[] = [
     description:
       "Personal project - Web based app for road violator with QR Code.",
     icons: [],
+    link: "",
   },
   {
     name: "Pharmacy stock inventory system",
     src: Botika,
     description: "Personal project - Simple Inventory for Pharmacy store",
     icons: [],
+    link: "https://botikanialingcoring-ph.vercel.app/",
   },
   // ... (other albums)
 ];
@@ -126,7 +135,13 @@ const DemoCoverflow: React.FC = () => {
                     />
                   </div>
                   <h3 className={`${color} font-bold text-xl `}>
-                    {album.name}
+                    <Link
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      href={album.link}
+                    >
+                      {album.name}
+                    </Link>
                   </h3>
                 </div>
               </div>

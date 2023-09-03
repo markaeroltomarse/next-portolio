@@ -4,6 +4,8 @@ import useAppSelector from "@hooks/app-selector.hook";
 import useBreakpoints from "@hooks/breakpoints.hook";
 import useThemeStyle from "@hooks/theme-style.hook";
 import { setIsDarkMode } from "@store/slices/componentes.slice";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { useMemo } from "react";
 import { BsFillSunFill } from "react-icons/bs";
 import { HiCode } from "react-icons/hi";
@@ -12,7 +14,8 @@ import { MdDarkMode } from "react-icons/md";
 
 export interface NavbarProps {}
 
-const Navbar: React.FC<NavbarProps> = (props) => {
+const Navbar: React.FC<NavbarProps> = () => {
+  const router = useRouter();
   const dispatch = useAppDispatch();
   const isDark = useAppSelector((store) => store.components.isDarkMode);
 
@@ -62,13 +65,19 @@ const Navbar: React.FC<NavbarProps> = (props) => {
         {!isMobile ? (
           <div className="flex gap-5">
             {themeButton}
-            <Button
-              className="bg-blue-500 rounded flex gap-3 text-blue-50 shadow-sm"
-              noBorder
+            <Link
+              download="MarkAerol_Tomarse_CV.pdf"
+              target="_blank"
+              href={`${window.location.origin}/MarkAerol_Tomarse_CV.pdf`}
             >
-              <ImProfile className="text-blue-100" size={20} />
-              <h5>DOWNLOAD MY CV</h5>
-            </Button>
+              <Button
+                className="bg-blue-500 rounded flex gap-3 text-blue-50 shadow-sm"
+                noBorder
+              >
+                <ImProfile className="text-blue-100" size={20} />
+                <h5>DOWNLOAD MY CV</h5>
+              </Button>
+            </Link>
           </div>
         ) : (
           themeButton
