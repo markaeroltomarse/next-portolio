@@ -61,7 +61,6 @@ const HeroFeature: React.FC<HeroFeatureProps> = (props) => {
                 {"< Fullstack Developer />"}
               </code>
             </div>
-
             <SocialsComponent
               items={[
                 {
@@ -73,7 +72,8 @@ const HeroFeature: React.FC<HeroFeatureProps> = (props) => {
                   icon: <BsDiscord size={25} />,
                 },
                 {
-                  link: "https://www.youtube.com/channel/UCObdMPZ96BpyuBp-Oz8GSNg",
+                  // link: "https://www.youtube.com/channel/UCObdMPZ96BpyuBp-Oz8GSNg",
+                  link: "https://www.youtube.com",
                   icon: <AiFillYoutube size={25} />,
                 },
               ]}

@@ -11,7 +11,7 @@ const ProjectsFeature: React.FC<ProjectsFeatureProps> = (props) => {
   return (
     <div className={`${className}  `}>
       <h2 className="text-2xl font-bold flex gap-3 items-center ">
-        My Projects <BsPersonWorkspace size={30} />
+        Personal and Contributed Projects <BsPersonWorkspace size={30} />
       </h2>
       <br />
       <DemoCoverflow />
