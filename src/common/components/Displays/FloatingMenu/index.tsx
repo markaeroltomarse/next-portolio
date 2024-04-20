@@ -5,7 +5,6 @@ import { useCallback } from "react";
 import { AiOutlineHome, AiOutlineSetting } from "react-icons/ai";
 import { BsPersonWorkspace } from "react-icons/bs";
 import { HiCode } from "react-icons/hi";
-import { SiAboutdotme } from "react-icons/si";
 export interface FloatingMenuProps {}
 
 const FloatingMenu: React.FC<FloatingMenuProps> = (props) => {
@@ -58,7 +57,7 @@ const FloatingMenu: React.FC<FloatingMenuProps> = (props) => {
     <div
       className={`${theme} border-t-2  fixed left-1/2 transform -translate-x-1/2 bottom-0 p-3 rounded-ss-md rounded-se-md flex ${
         (xs || sm) && "w-full justify-center"
-      } grid grid-cols-5 gap-5 px-5`}
+      } flex justify-between gap-10 px-5`} // grid grid-cols-5 gap-5
     >
       <div
         onClick={() => handleClick("?sview=0")}
@@ -68,7 +67,7 @@ const FloatingMenu: React.FC<FloatingMenuProps> = (props) => {
       >
         <AiOutlineHome size={isActiveSize(0)} color={isActiveColor(0)} />
       </div>
-
+      {/* 
       <div
         onClick={() => handleClick("?sview=1")}
         className={`flex items-center justify-center py-2 cursor-pointer ${
@@ -76,7 +75,7 @@ const FloatingMenu: React.FC<FloatingMenuProps> = (props) => {
         }`}
       >
         <SiAboutdotme size={isActiveSize(1)} color={isActiveColor(1)} />
-      </div>
+      </div> */}
       <div
         onClick={() => handleClick("?sview=2")}
         className={`flex items-center justify-center py-2 cursor-pointer ${
