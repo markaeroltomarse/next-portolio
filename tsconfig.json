@@ -29,7 +29,8 @@
       "@styles/*": ["./src/styles/*"],
       "@layout/*": ["./src/layout/*"],
       "@store/*": ["./src/store/*"],
-      "@graphql/*": ["./src/graphql/*"]
+      "@graphql/*": ["./src/graphql/*"],
+      "@lib/*": ["./src/lib/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

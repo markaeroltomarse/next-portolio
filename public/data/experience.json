@@ -1,0 +1,33 @@
+{
+  "heading": "Experience",
+  "items": [
+    {
+      "id": "fuel-company",
+      "company": "Fuel Company",
+      "role": "Full Stack Developer",
+      "startDate": "2024-01",
+      "endDate": "",
+      "current": true,
+      "description": "Maintain and optimize internal web portals used by various departments. Implement new features and enhancements for business operations. Troubleshoot production issues and improve application performance. Collaborate with stakeholders to deliver technical solutions.",
+      "tags": ["React", "Next.js", "Node.js", "PostgreSQL"]
+    },
+    {
+      "id": "xurpas",
+      "company": "Xurpas Inc.",
+      "role": "Junior Full Stack Developer",
+      "startDate": "2022-01",
+      "endDate": "2023-12",
+      "current": false,
+      "description": "Contributed to multiple products: MetaCare (health & wellness e-commerce), MemaChat (real-time messaging platform), Playfriends (creator booking & scheduling), Food Truck (vendor ordering & delivery), and Globe Website (Drupal CMS maintenance). Worked across NestJS, Next.js, Flutter, WebSocket, AWS, and Google APIs.",
+      "tags": ["NestJS", "Next.js", "Flutter", "WebSocket", "AWS", "PostgreSQL"]
+    }
+  ],
+  "education": [
+    {
+      "id": "sti",
+      "school": "STI College Caloocan",
+      "degree": "Bachelor of Science in Information Technology",
+      "year": "2018 - 2022"
+    }
+  ]
+}

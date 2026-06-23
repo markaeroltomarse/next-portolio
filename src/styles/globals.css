@@ -2,51 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  padding: 0px;
-  margin: 0px;
-  overflow-x: hidden;
-}
-
-.particle-container {
-  position: relative;
-  width: 100%;
-  height: 80vh;
-  overflow: hidden;
-}
-
-.particle {
-  position: absolute;
-
-  animation: floatAnimation 5s infinite ease-in-out;
-}
-
-@keyframes floatAnimation {
-  0%,
-  100% {
-    transform: translateY(0);
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --border: 0 0% 89.8%;
+    --accent: 152 76% 36%;
+    --accent-foreground: 0 0% 100%;
   }
-  50% {
-    transform: translateY(
-      -20px
-    ); /* Adjust the value to control the floating height */
-  }
-}
 
-/* Define your styles for xs (extra-small) screens */
-@media (max-width: 575.98px) {
-  /* Styles for xs screens go here */
-  .container {
-    padding-left: 1em;
-    padding-right: 1em;
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 210 20% 98%;
+    --card: 224 71% 6%;
+    --card-foreground: 210 20% 98%;
+    --muted: 215 28% 17%;
+    --muted-foreground: 217 10% 64%;
+    --border: 215 28% 17%;
+    --accent: 152 76% 36%;
+    --accent-foreground: 0 0% 100%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
   }
 }
 
-/* Define your styles for sm (small) screens */
-@media (min-width: 576px) and (max-width: 767.98px) {
-  /* Styles for sm screens go here */
-  .container {
-    padding-left: 1em;
-    padding-right: 1em;
-  }
+html {
+  scroll-behavior: smooth;
 }

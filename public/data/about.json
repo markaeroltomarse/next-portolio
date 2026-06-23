@@ -1,0 +1,10 @@
+{
+  "heading": "About Me",
+  "bio": "Full Stack Developer with almost 3 years of professional experience specializing in React, Next.js, Node.js, TypeScript, PostgreSQL, and MongoDB.",
+  "paragraphs": [
+    "Experienced in building and maintaining production web applications, real-time systems, e-commerce platforms, admin dashboards, and internal business portals.",
+    "Currently working for a fuel company where I maintain and enhance internal web portals used across multiple departments. I am passionate about creating scalable applications, solving business problems, and delivering clean user experiences.",
+    "Prior to my current role, I worked at Xurpas Inc. as a Junior Full Stack Developer where I contributed to multiple products including MetaCare, MemaChat, Playfriends, Food Truck, and Globe Website."
+  ],
+  "profileImage": "/uploads/profile/dp.jpg"
+}

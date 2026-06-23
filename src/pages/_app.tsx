@@ -1,39 +1,26 @@
-import { NextPageWithLayout } from "@common_types/next-page-with-layout.types";
-import AppLayout from "@layout/app-layout.layout";
-import { wrapper } from "@store/index";
+import { ThemeProvider } from "@contexts/theme.context";
 import "@styles/globals.css";
 import { AppProps } from "next/app";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import Head from "next/head";
-import { Provider } from "react-redux";
 
-type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout;
-};
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+});
 
-const App: React.FC<AppProps> = ({
-  Component,
-  ...rest
-}: AppPropsWithLayout) => {
-  const { store, props } = wrapper.useWrappedStore(rest);
-
-  // Use the layout defined at the page level, if available
-  const getLayout = Component.getLayout ?? ((page) => page);
+const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <Head>
-        <title>Mark Aerol Tomarse | Portfolio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="application-name" content="MARK AEROL TOMARSE" />
-        <meta name="description" content="Mark Aerol Tomarse" />
-        <meta name="keywords" content="MARK AEROL TOMARSE" />
-        <meta name="msapplication-TileColor" content="#ffc40d" />
-        <meta name="theme-color" content="#ffffff" />
       </Head>
-      <Provider store={store}>
-        <AppLayout getLayout={getLayout}>
-          <Component {...props.pageProps} />
-        </AppLayout>
-      </Provider>
+      <ThemeProvider>
+        <div className={`${inter.variable} ${jetbrainsMono.variable} font-sans`}>
+          <Component {...pageProps} />
+        </div>
+      </ThemeProvider>
     </>
   );
 };

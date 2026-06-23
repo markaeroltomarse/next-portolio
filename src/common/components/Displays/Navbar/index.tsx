@@ -1,89 +1,93 @@
-import Button from "@components/Inputs/Button";
-import useAppDispatch from "@hooks/app-dispatch.hook";
-import useAppSelector from "@hooks/app-selector.hook";
-import useBreakpoints from "@hooks/breakpoints.hook";
-import useThemeStyle from "@hooks/theme-style.hook";
-import { setIsDarkMode } from "@store/slices/componentes.slice";
+import Container from "@components/Displays/Container";
+import ThemeToggle from "@components/Inputs/ThemeToggle";
+import { NavLink, SettingsData } from "@common_types/cms.types";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useMemo } from "react";
-import { BsFillSunFill } from "react-icons/bs";
+import { useState } from "react";
+import { FiMenu, FiX, FiDownload } from "react-icons/fi";
 import { HiCode } from "react-icons/hi";
-import { ImProfile } from "react-icons/im";
-import { MdDarkMode } from "react-icons/md";
 
-export interface NavbarProps {}
+interface NavbarProps {
+  settings: SettingsData;
+  resumeUrl?: string;
+}
 
-const Navbar: React.FC<NavbarProps> = () => {
+const Navbar: React.FC<NavbarProps> = ({ settings, resumeUrl }) => {
+  const [mobileOpen, setMobileOpen] = useState(false);
   const router = useRouter();
-  const dispatch = useAppDispatch();
-  const isDark = useAppSelector((store) => store.components.isDarkMode);
+  const isAdmin = router.pathname.startsWith("/admin");
 
-  const { sm, xs } = useBreakpoints();
-  const isMobile = sm === true || xs === true;
-
-  const themeButton = useMemo(() => {
-    if (isDark) {
-      return (
-        <Button
-          className="bg-yellow-200 rounded shadow-sm"
-          onClick={() => dispatch(setIsDarkMode(!isDark))}
-          noBorder
-        >
-          <MdDarkMode className="text-yellow-400" size={20} />
-        </Button>
-      );
-    }
-
-    return (
-      <>
-        <Button
-          className="bg-slate-700  rounded shadow-sm"
-          onClick={() => dispatch(setIsDarkMode(!isDark))}
-          noBorder
-        >
-          <BsFillSunFill className="text-slate-50" size={20} />
-        </Button>
-      </>
-    );
-  }, [sm, xs, isDark]);
-
-  const { validateTheme } = useThemeStyle();
-  const theme = validateTheme(`bg-slate-50`, `bg-slate-900`);
+  if (isAdmin) return null;
 
   return (
-    <div className={` ${theme} w-full z-[100] fixed top-0 `}>
-      <nav
-        className={`   flex justify-between container mx-auto ${
-          isMobile && "py-5"
-        } py-10 items-center `}
-      >
-        <h2 className="text-3xl flex gap-2 items-center">
-          <HiCode className="text-green-600" size={40} />
-          <b>MTOMARSE</b>
-        </h2>
-        {!isMobile ? (
-          <div className="flex gap-5">
-            {themeButton}
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
+      <Container className="flex items-center justify-between h-16">
+        <Link href="/" className="flex items-center gap-2 font-bold text-lg">
+          <HiCode className="text-accent" size={24} />
+          {settings.siteName}
+        </Link>
+
+        <div className="hidden md:flex items-center gap-8">
+          {settings.navLinks.map((link: NavLink) => (
             <Link
-              download="MarkAerol_Tomarse_CV.pdf"
-              target="_blank"
-              href={`${window.location.origin}/MarkAerol_Tomarse_CV.pdf`}
+              key={link.href}
+              href={link.href}
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
-              <Button
-                className="bg-blue-500 rounded flex gap-3 text-blue-50 shadow-sm"
-                noBorder
-              >
-                <ImProfile className="text-blue-100" size={20} />
-                <h5>DOWNLOAD MY CV</h5>
-              </Button>
+              {link.label}
             </Link>
-          </div>
-        ) : (
-          themeButton
-        )}
-      </nav>
-    </div>
+          ))}
+        </div>
+
+        <div className="flex items-center gap-3">
+          {resumeUrl && (
+            <Link
+              href={resumeUrl}
+              target="_blank"
+              className="hidden md:inline-flex items-center gap-2 text-sm px-4 py-2 rounded-lg border border-border text-muted-foreground hover:text-foreground hover:border-foreground/20 transition-colors"
+            >
+              <FiDownload size={14} />
+              CV
+            </Link>
+          )}
+          <ThemeToggle />
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-border text-muted-foreground"
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <FiX size={18} /> : <FiMenu size={18} />}
+          </button>
+        </div>
+      </Container>
+
+      {mobileOpen && (
+        <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-md">
+          <Container className="py-4 flex flex-col gap-3">
+            {settings.navLinks.map((link: NavLink) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="text-sm text-muted-foreground hover:text-foreground py-2 transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+            {resumeUrl && (
+              <Link
+                href={resumeUrl}
+                target="_blank"
+                className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground py-2"
+              >
+                <FiDownload size={14} />
+                Download CV
+              </Link>
+            )}
+          </Container>
+        </div>
+      )}
+    </nav>
   );
 };
 

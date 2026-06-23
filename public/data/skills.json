@@ -1,0 +1,47 @@
+{
+  "heading": "Technical Skills",
+  "categories": [
+    {
+      "id": "frontend",
+      "name": "Frontend",
+      "items": [
+        { "id": "react", "name": "React.js", "icon": "SiReact" },
+        { "id": "nextjs", "name": "Next.js", "icon": "SiNextdotjs" },
+        { "id": "typescript", "name": "TypeScript", "icon": "SiTypescript" },
+        { "id": "javascript", "name": "JavaScript", "icon": "SiJavascript" },
+        { "id": "tailwindcss", "name": "Tailwind CSS", "icon": "SiTailwindcss" },
+        { "id": "redux", "name": "Redux Toolkit", "icon": "SiRedux" },
+        { "id": "vuejs", "name": "Vue.js", "icon": "SiVuedotjs" },
+        { "id": "nuxtjs", "name": "Nuxt.js", "icon": "SiNuxtdotjs" }
+      ]
+    },
+    {
+      "id": "backend",
+      "name": "Backend",
+      "items": [
+        { "id": "nodejs", "name": "Node.js", "icon": "SiNodedotjs" },
+        { "id": "nestjs", "name": "NestJS", "icon": "SiNestjs" },
+        { "id": "graphql", "name": "GraphQL", "icon": "SiGraphql" }
+      ]
+    },
+    {
+      "id": "database",
+      "name": "Database & ORM",
+      "items": [
+        { "id": "postgresql", "name": "PostgreSQL", "icon": "SiPostgresql" },
+        { "id": "mongodb", "name": "MongoDB", "icon": "SiMongodb" },
+        { "id": "prisma", "name": "Prisma", "icon": "SiPrisma" }
+      ]
+    },
+    {
+      "id": "devops",
+      "name": "Cloud & DevOps",
+      "items": [
+        { "id": "aws", "name": "AWS", "icon": "SiAmazonaws" },
+        { "id": "docker", "name": "Docker", "icon": "SiDocker" },
+        { "id": "firebase", "name": "Firebase", "icon": "SiFirebase" },
+        { "id": "git", "name": "Git", "icon": "SiGit" }
+      ]
+    }
+  ]
+}

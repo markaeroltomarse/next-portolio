@@ -1,0 +1,9 @@
+{
+  "items": [
+    { "id": "github", "platform": "GitHub", "url": "https://github.com/markaeroltomarse", "icon": "FiGithub" },
+    { "id": "linkedin", "platform": "LinkedIn", "url": "", "icon": "FiLinkedin" },
+    { "id": "email", "platform": "Email", "url": "mailto:marktomarse@gmail.com", "icon": "FiMail" },
+    { "id": "discord", "platform": "Discord", "url": "https://discordapp.com/users/758345244537913410", "icon": "FiMessageCircle" },
+    { "id": "youtube", "platform": "YouTube", "url": "https://www.youtube.com", "icon": "FiYoutube" }
+  ]
+}
