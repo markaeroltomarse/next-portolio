@@ -58,8 +58,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data, socials }) => (
           <div className="relative w-48 h-48 md:w-72 md:h-72 flex-shrink-0">
             <Image
               src={data.profileImage}
-              alt={data.name}
+              alt={`${data.name} - ${data.title}`}
               fill
+              sizes="(max-width: 768px) 192px, 288px"
               className="object-cover rounded-2xl"
               priority
             />

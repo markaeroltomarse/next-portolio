@@ -35,7 +35,10 @@ export interface ProjectItem {
   id: string;
   name: string;
   description: string;
+  longDescription: string;
+  challenges: string;
   image: string;
+  screenshots: string[];
   liveUrl: string;
   repoUrl: string;
   tags: string[];
@@ -95,6 +98,39 @@ export interface SettingsData {
   navLinks: NavLink[];
   footerText: string;
   defaultTheme: "light" | "dark";
+  siteUrl: string;
+}
+
+export interface TestimonialItem {
+  id: string;
+  name: string;
+  role: string;
+  company: string;
+  content: string;
+  avatar: string;
+}
+
+export interface TestimonialsData {
+  heading: string;
+  subtitle: string;
+  items: TestimonialItem[];
+}
+
+export interface BlogPost {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  content: string;
+  coverImage: string;
+  tags: string[];
+  publishedAt: string;
+  published: boolean;
+}
+
+export interface BlogData {
+  heading: string;
+  items: BlogPost[];
 }
 
 export interface ApiResponse<T> {

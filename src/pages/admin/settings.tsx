@@ -52,6 +52,12 @@ export default function AdminSettings() {
               onChange={(v) => setData({ ...data, siteDescription: v })}
             />
             <AdminInput
+              label="Site URL (for SEO, e.g. https://yourdomain.com)"
+              value={data.siteUrl}
+              onChange={(v) => setData({ ...data, siteUrl: v })}
+              placeholder="https://yourdomain.com"
+            />
+            <AdminInput
               label="Footer Text"
               value={data.footerText}
               onChange={(v) => setData({ ...data, footerText: v })}

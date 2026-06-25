@@ -15,6 +15,8 @@ import {
   FiLayout,
   FiMenu,
   FiX,
+  FiMessageSquare,
+  FiEdit3,
 } from "react-icons/fi";
 
 interface AdminLayoutProps {
@@ -29,7 +31,9 @@ const navItems = [
   { href: "/admin/skills", label: "Skills", icon: FiCode },
   { href: "/admin/projects", label: "Projects", icon: FiFolder },
   { href: "/admin/experience", label: "Experience", icon: FiBriefcase },
+  { href: "/admin/testimonials", label: "Testimonials", icon: FiMessageSquare },
   { href: "/admin/socials", label: "Socials", icon: FiShare2 },
+  { href: "/admin/blog", label: "Blog", icon: FiEdit3 },
   { href: "/admin/settings", label: "Settings", icon: FiSettings },
 ];
 

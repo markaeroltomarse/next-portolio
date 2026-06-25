@@ -8,8 +8,10 @@
     { "label": "Skills", "href": "#skills" },
     { "label": "Projects", "href": "#projects" },
     { "label": "Experience", "href": "#experience" },
-    { "label": "Contact", "href": "#contact" }
+    { "label": "Contact", "href": "#contact" },
+    { "label": "Blog", "href": "/blog" }
   ],
   "footerText": "Mark Aerol Tomarse",
-  "defaultTheme": "dark"
+  "defaultTheme": "dark",
+  "siteUrl": ""
 }

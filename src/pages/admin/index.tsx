@@ -8,15 +8,19 @@ import {
   FiBriefcase,
   FiShare2,
   FiSettings,
+  FiMessageSquare,
+  FiEdit3,
 } from "react-icons/fi";
 
 const sections = [
   { href: "/admin/hero", label: "Hero", desc: "Name, title, profile image", icon: FiLayout },
   { href: "/admin/about", label: "About", desc: "Bio and paragraphs", icon: FiUser },
   { href: "/admin/skills", label: "Skills", desc: "Technologies and categories", icon: FiCode },
-  { href: "/admin/projects", label: "Projects", desc: "Portfolio projects", icon: FiFolder },
+  { href: "/admin/projects", label: "Projects", desc: "Portfolio projects and case studies", icon: FiFolder },
   { href: "/admin/experience", label: "Experience", desc: "Work history and education", icon: FiBriefcase },
+  { href: "/admin/testimonials", label: "Testimonials", desc: "Client and colleague feedback", icon: FiMessageSquare },
   { href: "/admin/socials", label: "Socials", desc: "Social media links", icon: FiShare2 },
+  { href: "/admin/blog", label: "Blog", desc: "Technical blog posts", icon: FiEdit3 },
   { href: "/admin/settings", label: "Settings", desc: "Site name, nav links, theme", icon: FiSettings },
 ];
 

@@ -13,7 +13,10 @@ function emptyProject(): ProjectItem {
     id: `proj-${Date.now()}`,
     name: "",
     description: "",
+    longDescription: "",
+    challenges: "",
     image: "",
+    screenshots: [],
     liveUrl: "",
     repoUrl: "",
     tags: [],
@@ -78,10 +81,22 @@ export default function AdminProjects() {
                 onChange={(v) => updateProject(i, "name", v)}
               />
               <AdminTextarea
-                label="Description"
+                label="Short Description (shown on card)"
                 value={project.description}
                 onChange={(v) => updateProject(i, "description", v)}
                 rows={2}
+              />
+              <AdminTextarea
+                label="Full Description (shown on detail page)"
+                value={project.longDescription}
+                onChange={(v) => updateProject(i, "longDescription", v)}
+                rows={4}
+              />
+              <AdminTextarea
+                label="Challenges & Solutions (optional)"
+                value={project.challenges}
+                onChange={(v) => updateProject(i, "challenges", v)}
+                rows={3}
               />
               <AdminImageUpload
                 label="Image"

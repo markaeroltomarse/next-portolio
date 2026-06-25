@@ -10,6 +10,8 @@ const ALLOWED_SECTIONS = [
   "experience",
   "socials",
   "settings",
+  "testimonials",
+  "blog",
 ];
 
 export default async function handler(

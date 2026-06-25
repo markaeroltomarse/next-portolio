@@ -4,20 +4,14 @@
     {
       "id": "ae-solar",
       "name": "Solarise Energy Fund Platform (AE Solar Korea)",
-      "description": "Comprehensive solar investment ecosystem — public website, member portal, admin panel, and mobile application. Features investment simulation, automated dividend distribution, biometric authentication, real-time exchange rates, multi-language support, and role-based permissions.",
+      "description": "Comprehensive solar investment ecosystem — public website, member portal, admin panel, and mobile application.",
+      "longDescription": "",
+      "challenges": "",
       "image": "/uploads/projects/1782218096077.png",
+      "screenshots": [],
       "liveUrl": "https://ae-solarkorea.com",
       "repoUrl": "",
-      "tags": [
-        "Next.js 15",
-        "React 19",
-        "NestJS",
-        "PostgreSQL",
-        "Prisma",
-        "React Native",
-        "Expo",
-        "Cloudflare R2"
-      ],
+      "tags": ["Next.js 15", "React 19", "NestJS", "PostgreSQL", "Prisma", "React Native", "Expo", "Cloudflare R2"],
       "featured": true,
       "order": 0
     },
@@ -25,19 +19,13 @@
       "id": "hinode",
       "name": "Hinode Ball Potto",
       "description": "Japanese glass manufacturer product showcase and CMS. Features product & distributor management, admin dashboard, SSR rendering, responsive design, and image upload system.",
+      "longDescription": "",
+      "challenges": "",
       "image": "/uploads/projects/1782366379803.png",
+      "screenshots": [],
       "liveUrl": "https://hinodeballpotto.com",
       "repoUrl": "",
-      "tags": [
-        "Next.js",
-        "TypeScript",
-        "Tailwind CSS",
-        "Prisma",
-        "Redux Toolkit",
-        "RTK Query",
-        "Firebase Storage",
-        "JWT"
-      ],
+      "tags": ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Redux Toolkit", "RTK Query", "Firebase Storage", "JWT"],
       "featured": true,
       "order": 1
     },
@@ -45,16 +33,13 @@
       "id": "metacare",
       "name": "MetaCare",
       "description": "Health & wellness e-commerce platform built at Xurpas Inc. Backend development, API integrations, merchant onboarding, appointments, and notifications.",
+      "longDescription": "",
+      "challenges": "",
       "image": "/uploads/projects/metacare.png",
+      "screenshots": [],
       "liveUrl": "",
       "repoUrl": "",
-      "tags": [
-        "NestJS",
-        "Flutter",
-        "AWS",
-        "Google APIs",
-        "SMTP"
-      ],
+      "tags": ["NestJS", "Flutter", "AWS", "Google APIs", "SMTP"],
       "featured": false,
       "order": 2
     },
@@ -62,15 +47,13 @@
       "id": "memachat",
       "name": "MemaChat",
       "description": "Real-time messaging platform built at Xurpas Inc. Full-stack development including user management, rewards management, and real-time messaging.",
+      "longDescription": "",
+      "challenges": "",
       "image": "/uploads/projects/memachat.png",
+      "screenshots": [],
       "liveUrl": "",
       "repoUrl": "",
-      "tags": [
-        "NestJS",
-        "Next.js",
-        "WebSocket",
-        "AWS"
-      ],
+      "tags": ["NestJS", "Next.js", "WebSocket", "AWS"],
       "featured": false,
       "order": 3
     },
@@ -78,15 +61,13 @@
       "id": "playfriends",
       "name": "Playfriends",
       "description": "Creator booking and scheduling platform built at Xurpas Inc. Full-stack development including scheduling system, payment integrations, and chat functionality.",
+      "longDescription": "",
+      "challenges": "",
       "image": "/uploads/projects/playfriends.png",
+      "screenshots": [],
       "liveUrl": "",
       "repoUrl": "",
-      "tags": [
-        "NestJS",
-        "Next.js",
-        "WebSocket",
-        "AWS"
-      ],
+      "tags": ["NestJS", "Next.js", "WebSocket", "AWS"],
       "featured": false,
       "order": 4
     },
@@ -94,15 +75,13 @@
       "id": "foodtruck",
       "name": "Food Truck",
       "description": "Vendor-based ordering and delivery platform. Vendor management, delivery scheduling, real-time chat, and customer ordering.",
+      "longDescription": "",
+      "challenges": "",
       "image": "/uploads/projects/traqr.png",
+      "screenshots": [],
       "liveUrl": "",
       "repoUrl": "",
-      "tags": [
-        "NestJS",
-        "Next.js",
-        "Google APIs",
-        "WebSocket"
-      ],
+      "tags": ["NestJS", "Next.js", "Google APIs", "WebSocket"],
       "featured": false,
       "order": 5
     },
@@ -110,13 +89,13 @@
       "id": "onems",
       "name": "Online School Management",
       "description": "Thesis Project - Online School Management web application.",
+      "longDescription": "",
+      "challenges": "",
       "image": "/uploads/projects/onems.png",
+      "screenshots": [],
       "liveUrl": "",
       "repoUrl": "",
-      "tags": [
-        "Web App",
-        "Thesis"
-      ],
+      "tags": ["Web App", "Thesis"],
       "featured": false,
       "order": 6
     },
@@ -124,13 +103,13 @@
       "id": "botika",
       "name": "Pharmacy Stock Inventory",
       "description": "Simple inventory system for a pharmacy store.",
+      "longDescription": "",
+      "challenges": "",
       "image": "/uploads/projects/botikav2.png",
+      "screenshots": [],
       "liveUrl": "https://botikanialingcoring-ph.vercel.app/",
       "repoUrl": "",
-      "tags": [
-        "React",
-        "Inventory"
-      ],
+      "tags": ["React", "Inventory"],
       "featured": false,
       "order": 7
     }

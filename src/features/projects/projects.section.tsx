@@ -5,35 +5,31 @@ import SectionHeading from "@components/Displays/SectionHeading";
 import { ProjectsData, ProjectItem } from "@common_types/cms.types";
 import Image from "next/image";
 import Link from "next/link";
-import { FiExternalLink } from "react-icons/fi";
+import { FiArrowRight } from "react-icons/fi";
 
 interface ProjectsSectionProps {
   data: ProjectsData;
 }
 
-const ProjectCard: React.FC<{ project: ProjectItem }> = ({ project }) => {
-  const hasLink = project.liveUrl || project.repoUrl;
-  const url = project.liveUrl || project.repoUrl;
-
-  const content = (
+const ProjectCard: React.FC<{ project: ProjectItem }> = ({ project }) => (
+  <Link href={`/projects/${project.id}`}>
     <div className="group rounded-lg border border-border bg-card overflow-hidden transition-all duration-200 hover:border-accent/50 hover:shadow-md">
       <div className="relative aspect-video bg-muted overflow-hidden">
         <Image
           src={project.image}
-          alt={project.name}
+          alt={`${project.name} - ${project.description}`}
           fill
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover transition-transform duration-300 group-hover:scale-105"
         />
       </div>
       <div className="p-5">
         <div className="flex items-start justify-between gap-2">
           <h3 className="font-semibold text-lg">{project.name}</h3>
-          {hasLink && (
-            <FiExternalLink
-              size={16}
-              className="text-muted-foreground mt-1 flex-shrink-0"
-            />
-          )}
+          <FiArrowRight
+            size={16}
+            className="text-muted-foreground mt-1 flex-shrink-0 group-hover:text-accent transition-colors"
+          />
         </div>
         <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
           {project.description}
@@ -47,18 +43,8 @@ const ProjectCard: React.FC<{ project: ProjectItem }> = ({ project }) => {
         )}
       </div>
     </div>
-  );
-
-  if (hasLink && url) {
-    return (
-      <Link href={url} target="_blank" rel="noopener noreferrer">
-        {content}
-      </Link>
-    );
-  }
-
-  return content;
-};
+  </Link>
+);
 
 const ProjectsSection: React.FC<ProjectsSectionProps> = ({ data }) => {
   const sorted = [...data.items].sort((a, b) => a.order - b.order);
