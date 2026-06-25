@@ -26,9 +26,16 @@ const ExperienceSection: React.FC<ExperienceSectionProps> = ({ data }) => (
         {data.items.map((item) => (
           <div key={item.id} className="border-l-2 border-border pl-6 relative">
             <div className="absolute -left-[5px] top-1.5 w-2 h-2 rounded-full bg-accent" />
-            <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-              {formatDateRange(item.startDate, item.endDate, item.current)}
-            </p>
+            <div className="flex items-center gap-2">
+              <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                {formatDateRange(item.startDate, item.endDate, item.current)}
+              </p>
+              {item.current && (
+                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-accent/15 text-accent">
+                  Present
+                </span>
+              )}
+            </div>
             <h3 className="mt-1 text-lg font-semibold">
               {item.role}{" "}
               <span className="text-muted-foreground font-normal">

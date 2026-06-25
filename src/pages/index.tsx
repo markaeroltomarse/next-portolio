@@ -10,6 +10,7 @@ import {
   SocialsData,
 } from "@common_types/cms.types";
 import AboutSection from "@features/about/about.section";
+import ContactSection from "@features/contact/contact.section";
 import ExperienceSection from "@features/experience/experience.section";
 import HeroSection from "@features/hero/hero.section";
 import ProjectsSection from "@features/projects/projects.section";
@@ -50,6 +51,7 @@ export default function Home({
         <SkillsSection data={skills} />
         <ProjectsSection data={projects} />
         <ExperienceSection data={experience} />
+        <ContactSection socials={socials} email="marktomarse@gmail.com" />
       </main>
       <Footer socials={socials} settings={settings} />
     </>

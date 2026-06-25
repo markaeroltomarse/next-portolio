@@ -83,7 +83,7 @@ export default function AdminSocials() {
                 <select
                   value={social.icon}
                   onChange={(e) => updateSocial(i, "icon", e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-green-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-green-500"
                 >
                   {ICON_OPTIONS.map((icon) => (
                     <option key={icon} value={icon}>
