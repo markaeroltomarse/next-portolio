@@ -29,6 +29,10 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  if (process.env.NODE_ENV !== "development") {
+    return res.status(403).json({ success: false, error: "Upload is only available in development" });
+  }
+
   if (!verifyAuth(req)) {
     return res.status(401).json({ success: false, error: "Unauthorized" });
   }
@@ -64,7 +68,7 @@ export default async function handler(
 
   if (req.method === "DELETE") {
     try {
-      const chunks: Buffer[] = [];
+      const chunks: Uint8Array[] = [];
       for await (const chunk of req) {
         chunks.push(chunk);
       }
