@@ -58,7 +58,7 @@ export default function Home({
         <meta name="twitter:image" content={`${settings.siteUrl}${hero.profileImage}`} />
       </Head>
       <Navbar settings={settings} resumeUrl={hero.resumeUrl} />
-      <main className="pt-16">
+      <main className="pt-24">
         <HeroSection data={hero} socials={socials} />
         <AboutSection data={about} />
         <SkillsSection data={skills} />

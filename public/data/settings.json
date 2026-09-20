@@ -1,7 +1,7 @@
 {
   "siteName": "MTOMARSE",
-  "siteTitle": "Mark Aerol Tomarse | Full Stack Developer",
-  "siteDescription": "Full Stack Developer with almost 3 years of experience specializing in React, Next.js, Node.js, TypeScript, PostgreSQL, and MongoDB.",
+  "siteTitle": "Mark Aerol Tomarse | Senior Fullstack Engineer",
+  "siteDescription": "Senior Fullstack Engineer with almost 3 years of experience specializing in React, Next.js, Node.js, TypeScript, PostgreSQL, and MongoDB.",
   "navLinks": [
     { "label": "Home", "href": "#hero" },
     { "label": "About", "href": "#about" },

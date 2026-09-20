@@ -20,18 +20,18 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ data }) => {
           {data.items.map((item) => (
             <div
               key={item.id}
-              className="rounded-lg border border-border bg-card p-6 relative"
+              className="rounded-[28px] border border-border/60 bg-card p-6 shadow-ios relative transition-all duration-300 hover:border-accent/40 hover:shadow-ios-lg hover:-translate-y-0.5"
             >
               <FiMessageSquare
                 size={20}
-                className="text-accent/30 absolute top-4 right-4"
+                className="text-accent/25 absolute top-5 right-5"
               />
-              <p className="text-sm text-muted-foreground leading-relaxed italic">
+              <p className="text-[15px] text-muted-foreground leading-relaxed italic">
                 &ldquo;{item.content}&rdquo;
               </p>
               <div className="mt-4 flex items-center gap-3">
                 {item.avatar && (
-                  <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+                  <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0 ring-1 ring-border">
                     <Image
                       src={item.avatar}
                       alt={item.name}
@@ -42,8 +42,8 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ data }) => {
                   </div>
                 )}
                 <div>
-                  <p className="text-sm font-semibold">{item.name}</p>
-                  <p className="text-xs text-muted-foreground">
+                  <p className="text-[14px] font-semibold">{item.name}</p>
+                  <p className="text-[13px] text-muted-foreground">
                     {item.role}
                     {item.company && ` at ${item.company}`}
                   </p>

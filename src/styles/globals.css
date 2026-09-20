@@ -4,27 +4,36 @@
 
 @layer base {
   :root {
+    /* iOS systemBackground / label hierarchy (light) */
     --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    --foreground: 0 0% 4%;
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --border: 0 0% 89.8%;
-    --accent: 152 76% 36%;
+    --card-foreground: 0 0% 4%;
+    --muted: 220 20% 97%;
+    --muted-foreground: 220 9% 46%;
+    --border: 220 13% 91%;
+    /* iOS systemGreen */
+    --accent: 135 59% 49%;
     --accent-foreground: 0 0% 100%;
+
+    --glass-bg: 0 0% 100%;
+    --glass-border: 0 0% 100%;
   }
 
   .dark {
-    --background: 224 71% 4%;
-    --foreground: 210 20% 98%;
-    --card: 224 71% 6%;
-    --card-foreground: 210 20% 98%;
-    --muted: 215 28% 17%;
-    --muted-foreground: 217 10% 64%;
-    --border: 215 28% 17%;
-    --accent: 152 76% 36%;
+    /* true black iOS dark mode */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 240 4% 12%;
+    --card-foreground: 0 0% 100%;
+    --muted: 240 4% 9%;
+    --muted-foreground: 220 9% 65%;
+    --border: 240 4% 20%;
+    --accent: 135 64% 50%;
     --accent-foreground: 0 0% 100%;
+
+    --glass-bg: 240 4% 12%;
+    --glass-border: 0 0% 100%;
   }
 
   * {
@@ -36,10 +45,32 @@
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    letter-spacing: -0.011em;
   }
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 6rem;
+}
+
+::selection {
+  background-color: hsl(var(--accent) / 0.25);
+}
+
+/* iOS "Liquid Glass" material: frosted, saturated, hairline edge highlight */
+.glass {
+  background-color: hsl(var(--glass-bg) / 0.72);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid hsl(var(--glass-border) / 0.12);
+}
+
+.glass-thin {
+  background-color: hsl(var(--glass-bg) / 0.55);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid hsl(var(--glass-border) / 0.1);
 }

@@ -11,12 +11,12 @@ const AboutSection: React.FC<AboutSectionProps> = ({ data }) => (
   <Section id="about">
     <AnimateOnScroll>
       <SectionHeading title={data.heading} />
-      <div className="max-w-2xl space-y-6">
-        <p className="text-lg leading-relaxed text-muted-foreground">
+      <div className="max-w-2xl space-y-5">
+        <p className="text-[19px] leading-relaxed text-foreground/90">
           {data.bio}
         </p>
         {data.paragraphs.map((paragraph, i) => (
-          <p key={i} className="text-base leading-relaxed text-muted-foreground">
+          <p key={i} className="text-[17px] leading-relaxed text-muted-foreground">
             {paragraph}
           </p>
         ))}

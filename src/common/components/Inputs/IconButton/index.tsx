@@ -15,7 +15,7 @@ const IconButton: React.FC<IconButtonProps> = ({
   ariaLabel,
   className = "",
 }) => {
-  const styles = `inline-flex items-center justify-center w-10 h-10 rounded-lg border border-border text-muted-foreground hover:text-foreground hover:border-foreground/20 transition-colors ${className}`;
+  const styles = `inline-flex items-center justify-center w-10 h-10 rounded-full bg-foreground/[0.04] text-muted-foreground hover:text-foreground hover:bg-foreground/[0.08] active:scale-95 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background ${className}`;
 
   if (href) {
     return (

@@ -2,6 +2,43 @@
   "heading": "Projects",
   "items": [
     {
+      "id": "botikapos",
+      "name": "BotikaPOS",
+      "description": "Point of sale and inventory for small Philippine drugstores — batch-tracked stock with expiry-based rotation, purchasing, shift cash reconciliation, and an owner dashboard across branches.",
+      "longDescription": "A point-of-sale and inventory platform built for one-to-five-branch botika owners. The register is keyboard-driven and barcode-gun native with a camera fallback, and supports split payment, senior/PWD discounting, and prescription capture. Stock is tracked by batch — every lot carries its own expiry date and cost, and sales draw first-expiry-first-out automatically. Purchasing covers suppliers, purchase orders, and receiving, with every batch traceable back to the delivery it arrived on. Shift management handles opening float, denomination counts, and X/Z readings with variance against what the drawer should hold, and the owner dashboard rolls takings, open tills, and stock movement up across branches or down to one. The product is built around Philippine pharmacy regulation: RA 9994/10754 senior citizen and PWD discounting, RA 11467 VAT-exempt maintenance medicines, RA 10918 pharmacist sign-off on dispensed prescriptions, and FDA batch/expiry tracking on every lot.",
+      "challenges": "Getting receipt compliance right mattered more than any feature: branches default to an internal-control mode and are hard-blocked from printing anything claiming to be an official BIR receipt unless the shop holds a real Permit to Use, since that liability falls on the drugstore owner under the NIRC, not on the software. The other core problem was batch costing — every sale has to resolve against the correct first-expiring lot at its own cost, across purchasing, disposal, and reporting, without ever letting the numbers drift from what is physically on the shelf.",
+      "image": "/uploads/projects/botikapos-dashboard.webp",
+      "screenshots": [
+        "/uploads/projects/botikapos-register.webp",
+        "/uploads/projects/botikapos-inventory.webp",
+        "/uploads/projects/botikapos-purchase-orders.webp",
+        "/uploads/projects/botikapos-shifts.webp",
+        "/uploads/projects/botikapos-products.webp",
+        "/uploads/projects/botikapos-disposal.webp"
+      ],
+      "liveUrl": "",
+      "repoUrl": "",
+      "tags": ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Zustand", "React Hook Form", "Zod", "Cloudflare Workers"],
+      "featured": true,
+      "order": 0
+    },
+    {
+      "id": "dino",
+      "name": "Teytey Dino",
+      "description": "Browser-based 3D game — roam a procedural forest, hunt and collect 30 dinosaur species, then transform into any one you've caught. Every model, sound, and voice line is generated in code.",
+      "longDescription": "A browser 3D game built with Next.js and react-three-fiber: explore a 240-unit procedural forest of five biomes — meadow, pine highlands, misty swamp, deep woods, and badlands — each with its own terrain, scatter, and fog tint blended from region anchor points. Thirty dinosaur species, all built from one procedural model driven by data (proportions, horns, frills, flight), are scattered across tiered spawn zones. Defeating one adds it to your collection and unlocks transforming into it, with a full cinematic sequence — camera push-in, model swap, roar, and voice line. There are no external asset files: models, terrain, music, sound effects, and even the narrator's voice lines are all generated in code, so the game installs as an offline-capable PWA with nothing to download or license.",
+      "challenges": "The map is seven times the area of the first version with three times the dinosaurs, so performance drove most of the architecture: trees and rocks are bucketed into chunks with hand-rolled frustum/distance culling (three.js culls InstancedMesh by its geometry bounds, not its instance spread, so it would otherwise keep everything or wrongly discard it), distant dinosaurs stop animating past their view distance, and the shadow camera tracks the player in a small box instead of spanning the whole map. Game state is also split deliberately — anything that changes every frame lives in plain mutable objects outside React, and only discrete UI events go through the store — so walking around triggers zero re-renders.",
+      "image": "/uploads/projects/dino-forest.jpg",
+      "screenshots": [
+        "/uploads/projects/dino-transform.jpg"
+      ],
+      "liveUrl": "",
+      "repoUrl": "",
+      "tags": ["Next.js", "React Three Fiber", "Three.js", "TypeScript", "Zustand", "Web Audio API", "PWA"],
+      "featured": true,
+      "order": 1
+    },
+    {
       "id": "ae-solar",
       "name": "Solarise Energy Fund Platform (AE Solar Korea)",
       "description": "Comprehensive solar investment ecosystem — public website, member portal, admin panel, and mobile application.",
@@ -13,7 +50,7 @@
       "repoUrl": "",
       "tags": ["Next.js 15", "React 19", "NestJS", "PostgreSQL", "Prisma", "React Native", "Expo", "Cloudflare R2"],
       "featured": true,
-      "order": 0
+      "order": 2
     },
     {
       "id": "hinode",
@@ -27,7 +64,7 @@
       "repoUrl": "",
       "tags": ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "Redux Toolkit", "RTK Query", "Firebase Storage", "JWT"],
       "featured": true,
-      "order": 1
+      "order": 3
     },
     {
       "id": "metacare",
@@ -41,7 +78,7 @@
       "repoUrl": "",
       "tags": ["NestJS", "Flutter", "AWS", "Google APIs", "SMTP"],
       "featured": false,
-      "order": 2
+      "order": 4
     },
     {
       "id": "memachat",
@@ -55,7 +92,7 @@
       "repoUrl": "",
       "tags": ["NestJS", "Next.js", "WebSocket", "AWS"],
       "featured": false,
-      "order": 3
+      "order": 5
     },
     {
       "id": "playfriends",
@@ -69,7 +106,7 @@
       "repoUrl": "",
       "tags": ["NestJS", "Next.js", "WebSocket", "AWS"],
       "featured": false,
-      "order": 4
+      "order": 6
     },
     {
       "id": "foodtruck",
@@ -83,7 +120,7 @@
       "repoUrl": "",
       "tags": ["NestJS", "Next.js", "Google APIs", "WebSocket"],
       "featured": false,
-      "order": 5
+      "order": 7
     },
     {
       "id": "onems",
@@ -97,21 +134,7 @@
       "repoUrl": "",
       "tags": ["Web App", "Thesis"],
       "featured": false,
-      "order": 6
-    },
-    {
-      "id": "botika",
-      "name": "Pharmacy Stock Inventory",
-      "description": "Simple inventory system for a pharmacy store.",
-      "longDescription": "",
-      "challenges": "",
-      "image": "/uploads/projects/botikav2.png",
-      "screenshots": [],
-      "liveUrl": "https://botikanialingcoring-ph.vercel.app/",
-      "repoUrl": "",
-      "tags": ["React", "Inventory"],
-      "featured": false,
-      "order": 7
+      "order": 8
     }
   ]
 }

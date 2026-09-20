@@ -12,8 +12,11 @@ interface ProjectsSectionProps {
 }
 
 const ProjectCard: React.FC<{ project: ProjectItem }> = ({ project }) => (
-  <Link href={`/projects/${project.id}`}>
-    <div className="group rounded-lg border border-border bg-card overflow-hidden transition-all duration-200 hover:border-accent/50 hover:shadow-md">
+  <Link
+    href={`/projects/${project.id}`}
+    className="block rounded-[28px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+  >
+    <div className="group rounded-[28px] border border-border/60 bg-card overflow-hidden shadow-ios transition-all duration-300 hover:border-accent/40 hover:shadow-ios-lg hover:-translate-y-1">
       <div className="relative aspect-video bg-muted overflow-hidden">
         <Image
           src={project.image}
@@ -23,15 +26,15 @@ const ProjectCard: React.FC<{ project: ProjectItem }> = ({ project }) => (
           className="object-cover transition-transform duration-300 group-hover:scale-105"
         />
       </div>
-      <div className="p-5">
+      <div className="p-6">
         <div className="flex items-start justify-between gap-2">
-          <h3 className="font-semibold text-lg">{project.name}</h3>
+          <h3 className="font-semibold text-[17px] tracking-tight">{project.name}</h3>
           <FiArrowRight
             size={16}
-            className="text-muted-foreground mt-1 flex-shrink-0 group-hover:text-accent transition-colors"
+            className="text-muted-foreground mt-1 flex-shrink-0 group-hover:text-accent group-hover:translate-x-0.5 transition-all"
           />
         </div>
-        <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
+        <p className="mt-2 text-[14px] text-muted-foreground line-clamp-2">
           {project.description}
         </p>
         {project.tags.length > 0 && (

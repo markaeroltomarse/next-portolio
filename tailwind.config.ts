@@ -6,8 +6,33 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)", "system-ui", "-apple-system", "sans-serif"],
+        sans: [
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "SF Pro Display",
+          "SF Pro Text",
+          "var(--font-sans)",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica Neue",
+          "Arial",
+          "sans-serif",
+        ],
         mono: ["var(--font-mono)", "Fira Code", "monospace"],
+      },
+      borderRadius: {
+        "2xl": "1.125rem",
+        "3xl": "1.5rem",
+        "4xl": "1.875rem",
+        "5xl": "2.25rem",
+      },
+      boxShadow: {
+        ios: "0 1px 2px rgba(0,0,0,0.04), 0 8px 30px -8px rgba(0,0,0,0.12)",
+        "ios-lg": "0 2px 6px rgba(0,0,0,0.05), 0 20px 40px -12px rgba(0,0,0,0.18)",
+        glass: "0 1px 1px rgba(255,255,255,0.15) inset, 0 8px 30px -8px rgba(0,0,0,0.16)",
+      },
+      backdropBlur: {
+        xs: "2px",
       },
       colors: {
         border: "hsl(var(--border))",
