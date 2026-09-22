@@ -16,7 +16,7 @@
         "/uploads/projects/botikapos-products.webp",
         "/uploads/projects/botikapos-disposal.webp"
       ],
-      "liveUrl": "",
+      "liveUrl": "https://botikapos.com",
       "repoUrl": "",
       "tags": ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Zustand", "React Hook Form", "Zod", "Cloudflare Workers"],
       "featured": true,
@@ -32,7 +32,7 @@
       "screenshots": [
         "/uploads/projects/dino-transform.jpg"
       ],
-      "liveUrl": "",
+      "liveUrl": "https://teytey-dino.vercel.app/",
       "repoUrl": "",
       "tags": ["Next.js", "React Three Fiber", "Three.js", "TypeScript", "Zustand", "Web Audio API", "PWA"],
       "featured": true,
