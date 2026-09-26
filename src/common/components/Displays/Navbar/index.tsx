@@ -56,7 +56,7 @@ const Navbar: React.FC<NavbarProps> = ({ settings, resumeUrl }) => {
             <ThemeToggle />
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden inline-flex items-center justify-center w-9 h-9 rounded-full bg-foreground/[0.05] text-foreground hover:bg-foreground/[0.09] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-full bg-foreground/[0.05] text-foreground hover:bg-foreground/[0.09] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               aria-label="Toggle menu"
             >
               {mobileOpen ? <FiX size={16} /> : <FiMenu size={16} />}

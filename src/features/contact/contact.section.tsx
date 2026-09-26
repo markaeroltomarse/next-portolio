@@ -22,7 +22,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ socials, email }) => (
         <div className="flex justify-center mb-8">
           <a
             href={`mailto:${email}`}
-            className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-accent text-accent-foreground font-semibold text-[15px] shadow-ios hover:opacity-90 active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-accent-fill text-accent-foreground font-semibold text-[15px] shadow-ios hover:opacity-90 active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             <FiMail size={20} />
             {email}

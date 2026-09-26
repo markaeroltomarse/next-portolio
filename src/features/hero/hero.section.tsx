@@ -3,6 +3,7 @@ import DynamicIcon from "@components/Displays/DynamicIcon";
 import LottiePlayer from "@components/Displays/LottiePlayer";
 import Section from "@components/Displays/Section";
 import IconButton from "@components/Inputs/IconButton";
+import usePrefersReducedMotion from "@hooks/reduced-motion.hook";
 import { HeroData, SocialsData } from "@common_types/cms.types";
 import heroOrbit from "@assets/lottie/hero-orbit.json";
 import Image from "next/image";
@@ -14,7 +15,10 @@ interface HeroSectionProps {
   socials: SocialsData;
 }
 
-const HeroSection: React.FC<HeroSectionProps> = ({ data, socials }) => (
+const HeroSection: React.FC<HeroSectionProps> = ({ data, socials }) => {
+  const reducedMotion = usePrefersReducedMotion();
+
+  return (
   <Section id="hero" className="min-h-[calc(100vh-6rem)] flex items-center py-20 md:py-20">
     <AnimateOnScroll className="w-full">
       <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-14 md:gap-20">
@@ -36,7 +40,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data, socials }) => (
               <Link
                 href={data.resumeUrl}
                 target="_blank"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-accent text-accent-foreground font-semibold text-[15px] shadow-ios hover:opacity-90 active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-accent-fill text-accent-foreground font-semibold text-[15px] shadow-ios hover:opacity-90 active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 <FiDownload size={16} />
                 {data.resumeLabel}
@@ -59,12 +63,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data, socials }) => (
         </div>
 
         <div className="relative w-48 h-48 md:w-72 md:h-72 flex-shrink-0">
-          <div
-            className="pointer-events-none absolute inset-0 -z-10 scale-[1.3]"
-            aria-hidden="true"
-          >
-            <LottiePlayer animationData={heroOrbit} />
-          </div>
+          {!reducedMotion && (
+            <div
+              className="pointer-events-none absolute inset-0 -z-10 scale-[1.3]"
+              aria-hidden="true"
+            >
+              <LottiePlayer animationData={heroOrbit} />
+            </div>
+          )}
           <Image
             src={data.profileImage}
             alt={`${data.name} - ${data.title}`}
@@ -77,6 +83,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data, socials }) => (
       </div>
     </AnimateOnScroll>
   </Section>
-);
+  );
+};
 
 export default HeroSection;

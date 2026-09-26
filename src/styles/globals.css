@@ -12,9 +12,14 @@
     --muted: 220 20% 97%;
     --muted-foreground: 220 9% 46%;
     --border: 220 13% 91%;
-    /* iOS systemGreen */
-    --accent: 135 59% 49%;
+    /* iOS systemGreen, darkened from the raw 135 59% 49% so it clears 4.5:1
+       as text-on-white, as a white-text button fill, and on its own tints
+       (raw value only cleared ~2:1 in all three roles) */
+    --accent: 135 70% 26%;
     --accent-foreground: 0 0% 100%;
+    /* same value works as a button fill here; kept separate so dark mode
+       can use a different fill without touching --accent's text/tint uses */
+    --accent-fill: 135 70% 26%;
 
     --glass-bg: 0 0% 100%;
     --glass-border: 0 0% 100%;
@@ -29,8 +34,12 @@
     --muted: 240 4% 9%;
     --muted-foreground: 220 9% 65%;
     --border: 240 4% 20%;
+    /* kept bright: passes 4.5:1+ as text/tint on dark backgrounds */
     --accent: 135 64% 50%;
     --accent-foreground: 0 0% 100%;
+    /* darker than --accent: the bright value only reaches 2.02:1 under
+       white button text, this reaches ~6:1 */
+    --accent-fill: 135 60% 28%;
 
     --glass-bg: 240 4% 12%;
     --glass-border: 0 0% 100%;
@@ -68,9 +77,10 @@ html {
   border: 1px solid hsl(var(--glass-border) / 0.12);
 }
 
-.glass-thin {
-  background-color: hsl(var(--glass-bg) / 0.55);
-  backdrop-filter: blur(16px) saturate(160%);
-  -webkit-backdrop-filter: blur(16px) saturate(160%);
-  border: 1px solid hsl(var(--glass-border) / 0.1);
+@media (prefers-reduced-transparency: reduce) {
+  .glass {
+    background-color: hsl(var(--glass-bg));
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
 }
